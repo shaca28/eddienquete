@@ -1,6 +1,5 @@
 aws/
 env/
-iac/
 new_user_credentials.csv
 *.pem
 ### Terraform ###
