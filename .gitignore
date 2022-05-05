@@ -1,0 +1,13 @@
+aws/
+env/
+iac/
+new_user_credentials.csv
+*.pem
+### Terraform ###
+# Local .terraform directories
+**/.terraform/*
+
+# .tfstate files
+*.tfstate
+*.tfstate.*
+eddienquete.pem:Zone.Identifier
