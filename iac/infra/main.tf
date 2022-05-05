@@ -23,7 +23,7 @@ resource "aws_instance" "app_server" {
   key_name = var.chave
 
   tags = {
-    Name = "eddienquete-python"
+    Name = "eddienquete-dev"
   }
 }
 
