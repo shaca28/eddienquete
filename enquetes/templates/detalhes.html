@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <!-- Preloader -->
+    <div id="preloader">
+        <i class="circle-preloader"></i>
+        <img src="{% static 'img/core-img/logo.png' %}" alt="">
+    </div>
+
+    <!-- Search Wrapper -->
+    <div class="search-wrapper">
+        <!-- Close Btn -->
+        <div class="close-btn"><i class="fa fa-times" aria-hidden="true"></i></div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <form action="#" method="post">
+                        <input type="search" name="search" placeholder="O que está procurando...">
+                        <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% include 'partials/menu.html' %}
+
+        
+        <!-- Receipe Slider -->
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="receipe-slider owl-carousel">
+                        <img src="#">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Receipe Content Area -->
+        <div class="receipe-content-area">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-12 col-md-8">
+                        <div class="receipe-headline my-5">
+                            <span>Data</span>
+                            <h2>Pergunta???</h2>
+                            <div class="receipe-duration">
+                                <h6>Resposta 1</h6>
+                                <h6>Resposta 2</h6>
+                                <h6>Resposta</h6>
+                                <h6>Por: Pessoa</h6>
+                            </div>
+                        </div>
+                    </div>
+
+                <div class="row">
+                    <div class="col-12 col-lg-8">
+                        <!-- Single Preparation Step -->
+                        <div class="single-preparation-step d-flex">
+                            <p>Observação 1. </p>
+                        </div>
+                    </div>
+
+                    <!-- Ingredientes -->
+                    <div class="col-12 col-lg-4">
+                        <div class="ingredients">
+                            <h4>Obs:</h4>
+                            <div class="ingredients">
+                                <p>obs2. </p>
+                            </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Ingredientes -->
+
+    {% include 'partials/footer.html' %}
+{% endblock %} 
