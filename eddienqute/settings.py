@@ -24,6 +24,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     # Meus Apps
     'enquetes',
+    'pessoas',
 
     # Apps django
     'django.contrib.admin',
