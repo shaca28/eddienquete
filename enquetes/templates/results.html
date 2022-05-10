@@ -1,9 +1,50 @@
-<h1>{{ question.question_text }}</h1>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
 
-<ul>
-{% for choice in question.choice_set.all %}
-    <li>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
-{% endfor %}
-</ul>
+    <!-- Preloader -->
+    <div id="preloader">
+        <i class="circle-preloader"></i>
+        <img src="{% static 'img/core-img/dsm.png' %}" alt="">
+    </div>
 
-<a href="{% url 'detail' question.id %}">Vote again?</a>
+    <!-- Search Wrapper -->
+    <div class="search-wrapper">
+        <!-- Close Btn -->
+        <div class="close-btn"><i class="fa fa-times" aria-hidden="true"></i></div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <form action="#" method="post">
+                        <input type="search" name="search" placeholder="O que está procurando...">
+                        <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% include 'partials/menu.html' %}
+
+    <section class="best-receipe-area">
+        <div class="container">
+                <h1>{{ question.question_text }}</h1>
+
+                <ul>
+                {% for choice in question.choice_set.all %}
+                    <li>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
+                {% endfor %}
+                </ul>
+                <br>
+                <br>
+
+                <a href="{% url 'detail' question.id %}">Votar novamente?</a>
+        </div>        
+    </section>    
+
+
+{% include 'partials/footer.html' %}
+
+
+ {% endblock %}
