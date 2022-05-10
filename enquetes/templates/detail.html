@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <i class="circle-preloader"></i>
+        <img src="{% static 'img/core-img/logo.png' %}" alt="">
+    </div>
+
+    <!-- Search Wrapper -->
+    <div class="search-wrapper">
+        <!-- Close Btn -->
+        <div class="close-btn"><i class="fa fa-times" aria-hidden="true"></i></div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <form action="#" method="post">
+                        <input type="search" name="search" placeholder="O que está procurando...">
+                        <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% include 'partials/menu.html' %}
+
+			<section class="best-receipe-area">
+				<div class="container">
+					<div class="row">
+						<form action="{% url 'vote' question.id %}" method="post">
+							{% csrf_token %}
+							<fieldset>
+								<legend><h1>{{ question.question_text }}</h1></legend>
+								{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+								{% for choice in question.choice_set.all %}
+									<input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}">
+									<label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br>
+								{% endfor %}
+							</fieldset>
+							<input type="submit" value="Vote">
+						</form>
+					</div>	
+				</div>	
+			</section>	
+			
+					<!-- Ingredientes -->
+
+
+{% endblock %}	
